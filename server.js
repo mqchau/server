@@ -14,6 +14,10 @@ export default function(opt) {
     opt = opt || {};
 
     const validHosts = (opt.domain) ? [opt.domain] : undefined;
+    console.log('-----------------------------');
+    console.log(validHosts);
+    console.log(opt);
+    console.log('-----------------------------');
     const myTldjs = tldjs.fromUserSettings({ validHosts });
     const landingPage = opt.landing || 'https://localtunnel.github.io/www/';
 
@@ -127,6 +131,8 @@ export default function(opt) {
         }
 
         const clientId = GetClientIdFromHostname(hostname);
+console.log(clientId);
+
         if (!clientId) {
             appCallback(req, res);
             return;
